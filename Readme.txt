@@ -210,6 +210,6 @@ Tutorial:
             12.7.1) Click VCS with a green arrow directing up in a up right hand corner.
             12.7.2) Check if any not useful files are to be present in a commit list and
                 remove them, or add the needed ones.
-            12.7.3) Click "Commit" and then "Commit and Push".
+            12.7.3) Click "Commit" and then "Commit and Push", "Commit" again, "Push" again.
 
-          i. Thus we have our project pushed to github.
+          i. You may see online in github.com that your project files are there.
