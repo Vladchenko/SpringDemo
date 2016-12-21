@@ -1,0 +1,36 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd
+            http://www.springframework.org/schema/mvc
+            http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+
+    <!-- Package where to look for a components of this project(app) -->
+    <context:component-scan base-package="ru.vlad.yanchenko" />
+    <!-- Deploying an ability to use annotations like @Controller, @RequestMapping etc. in a project -->
+    <context:annotation-config />
+
+    <!-- That's how one had to specify the beans before "context:component-scan" and "context:annotation-config"-->
+    <!-- For this bean to work, one also has to have a getter and setter for class specified -->
+    <!--<bean class="ru.vlad.yanchenko.controller.BasicController">-->
+        <!--<property name="basicController" ref="basicController" />-->
+    <!--</bean>-->
+
+    <!-- This is a bean that says where the presentation / views / jsp pages reside -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix">
+            <value></value><!-- This is the path where jsp pages reside. The default path stands for
+            webapp. When moving to a different location, one has to make sure that index.jsp to be
+            seen to server when it starts. -->
+        </property>
+        <property name="suffix">
+            <value>.jsp</value>
+        </property>
+    </bean>
+
+</beans>
